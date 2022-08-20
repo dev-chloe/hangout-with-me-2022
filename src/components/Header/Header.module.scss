@@ -1,0 +1,31 @@
+@import "./../../style/function.scss";
+
+.header {
+  @include fix (
+    $t: 0, $l: 0, $r: 0,
+    $w: 100%, $pd: 20px 20px 15px 320px,
+    $bg: $sub, $c: $main,
+    $d: flex, $ai: center, $jc: flex-end
+  );
+  ul {
+    @include fle (
+      $ai: center, $jc: flex-end
+    );
+    gap: 10px;
+    li {
+      a {
+        @include fle (
+          $jc: space-between,
+          $c: $main, $fw: bold, $pd: 10px,
+          $borRa: 10px
+        );
+        gap: 10px;
+        transition: background .4s, color .4s;
+        &:hover {
+          background: $main;
+          color: $wt;
+        }
+      }
+    }
+  }
+}

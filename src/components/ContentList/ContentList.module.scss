@@ -1,0 +1,60 @@
+@import "./../../style/function.scss";
+
+.contents_list {
+  @include css (
+    $d: grid, $pd: 10% 0
+  );
+  grid-template-columns: repeat(auto-fill, calc((100% / 3) - 14px));
+  grid-template-rows: repeat(auto-fill, 250px);
+  gap: 50px 20px;
+  .content {
+    @include fle(
+      $ai: flex-start, $jc: space-between
+    );
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: box-shadow .5s;
+    gap: 15px;
+    h3 {
+      font-size: 25px;
+      color: $main;
+    }
+    &_detail {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      word-wrap:break-word;
+      color: $gray;
+      transition: color .5s;
+    }
+    &_info {
+      @include fle (
+        $ai: center, $jc: space-between,
+        $w: 100%, $mgT: 15px,
+        $c: $gray
+      );
+      .goBtn {
+        a {
+          @include fle (
+            $ai: center, $jc: space-between,
+            $c: $gray
+          );
+          gap: 5px;
+        }
+      }
+    }
+    &:nth-of-type(4n) {
+      grid-column: 1 / span 3;
+    }
+    &:hover {
+      box-shadow: 0 0 10px $sub;
+      .content_detail {
+        color: $main;
+      }
+    }
+  }
+}

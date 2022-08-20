@@ -1,0 +1,19 @@
+@import "./../../style/function.scss";
+
+.top_banner {
+  @include fle(
+    $ai: center, $jc: space-between,
+    $bg: linear-gradient(171deg, $secsub, #DFDFF7),
+    $pd: 20px, $c: $wt
+  );
+  .txt_wrapper {
+    @include fle (
+      $ai: center, $jc: center,
+      $w: 50%, $fs: 30px
+    );
+    text-shadow: 4px 6px $secsub;
+  }
+  .img_wrapper {
+    max-width: 50%;
+  }
+}

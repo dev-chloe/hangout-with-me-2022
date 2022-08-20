@@ -1,0 +1,27 @@
+@import "./../../style/function.scss";
+
+.sidebar {
+  @include fix (
+    $t: 0, $l: 0, $b: 0,
+    $w: 100%, $pd: 25px 20px 20px,
+    $bg: $main, $c: $wt
+  );
+  max-width: 300px;
+  .logo {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: capitalize;
+    a {
+      color: $wt;
+    }
+  }
+  nav {
+    padding-top: 25%;
+    ul {
+      li {
+        padding: 5% 0;
+      }
+    }
+  }
+}
