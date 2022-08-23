@@ -1,5 +1,5 @@
 
-import { faHome, faList } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faList, faSquareH } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import style from "./Sidebar.module.scss";
@@ -9,7 +9,10 @@ const Sidebar = () => {
     <div className={style.sidebar}>
       <div className={style.logo}>
         <Link to="/">
-          chloe's homepage
+          <FontAwesomeIcon icon={faSquareH} />
+          <p>
+            chloe's homepage
+          </p>
         </Link>
       </div>
       <nav>
@@ -17,13 +20,17 @@ const Sidebar = () => {
           <li>
             <Link to="/">
               <FontAwesomeIcon icon={faHome} />
-              Home
+              <p>
+                Home
+              </p>
             </Link>
           </li>
           <li className={style.active}>
             <Link to="/">
               <FontAwesomeIcon icon={faList} />
-              contents
+              <p>
+                contents
+              </p>
             </Link>
           </li>
         </ul>

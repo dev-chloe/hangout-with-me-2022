@@ -24,24 +24,16 @@
 }
 
 @keyframes flying {
-  0% {
+  0%, 50%, 100% {
     right: 30px;
-    top: 30px;
+    top: -10px;
   }
   25% {
     right: 35px;
-    top: 25px;
-  }
-  50% {
-    right: 30px;
-    top: 30px;
+    top: 0px;
   }
   75% {
     right: 25px;
-    top: 25px;
-  }
-  100% {
-    right: 30px;
-    top: 30px;
+    top: 0px;
   }
 }

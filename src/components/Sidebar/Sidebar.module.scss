@@ -8,30 +8,89 @@
   );
   max-width: 300px;
   .logo {
-    text-align: center;
     font-size: 25px;
     font-weight: bold;
     text-transform: capitalize;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $secsub;
     a {
+      @include fle(
+        $c: $wt, $jc: center
+      );
       color: $wt;
+      svg {
+        margin-right: 20px;
+      }
     }
   }
   nav {
-    padding-top: 25%;
+    padding-top: 20%;
     ul {
       li {
-        padding: 5% 0;
+        padding: 10px 0;
         a {
-          @include fle(
+          @include rel (
             $c: $wt, $fs: 20px,
-            $pd: 10px 15px, $borRa: 15px
+            $pd: 13px 15px, $borRa: 15px, $d: flex
           );
-          gap: 10px;
+          gap: 20px;
           text-transform: capitalize;
           transition: color .4s, background .4s;
+          svg {
+            color: $wt;
+            z-index: 1;
+          }
+          &::before {
+            content: '';
+            @include abs (
+              $t: 3px, $b: 3px, $l: 4px,
+              $borRa: 12px, $w: 45px, $bg: $main
+            );
+            opacity: 0;
+            transition: opacity .4s;
+          }
           &:hover {
             background: $wt;
             color: $main;
+            &::before {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .sidebar {
+    max-width: 100px;
+    .logo {
+      a {
+        svg {
+          margin-right: 0;
+        }
+        p {
+          display: none;
+        }
+      }
+    }
+    nav {
+      ul {
+        li {
+          a {
+            justify-content: center;
+            p {
+              display: none;
+            }
+            &::before {
+              display: none;
+            }
+            &:hover {
+              svg {
+                color: $main;
+              }
+            }
           }
         }
       }
