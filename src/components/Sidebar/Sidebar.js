@@ -1,4 +1,6 @@
 
+import { faHome, faList } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import style from "./Sidebar.module.scss";
 
@@ -13,13 +15,16 @@ const Sidebar = () => {
       <nav>
         <ul>
           <li>
-            메뉴
+            <Link to="/">
+              <FontAwesomeIcon icon={faHome} />
+              Home
+            </Link>
           </li>
           <li className={style.active}>
-            메뉴
-          </li>
-          <li>
-            메뉴
+            <Link to="/">
+              <FontAwesomeIcon icon={faList} />
+              contents
+            </Link>
           </li>
         </ul>
       </nav>

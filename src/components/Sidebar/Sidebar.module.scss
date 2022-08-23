@@ -21,6 +21,19 @@
     ul {
       li {
         padding: 5% 0;
+        a {
+          @include fle(
+            $c: $wt, $fs: 20px,
+            $pd: 10px 15px, $borRa: 15px
+          );
+          gap: 10px;
+          text-transform: capitalize;
+          transition: color .4s, background .4s;
+          &:hover {
+            background: $wt;
+            color: $main;
+          }
+        }
       }
     }
   }

@@ -11,8 +11,94 @@ a {
   cursor: pointer;
 }
 
+button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  &.main_btn {
+    @include rel(
+      $w: 100%, $h: 43px, $fs: 18px,
+      $borRa: 15px, $bg: $secsub
+    );
+    overflow: hidden;
+    clip-path: inset(0);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    &::before,
+		&::after {
+      @include abs (
+        $d: block, $mg: auto, 
+        $w: 100%, $h: 100%, $borRa: 15px
+      );
+			content: '';
+			inset: 0;
+			transition: 280ms ease-out 40ms, border-radius 260ms ease-out;
+    }
+    &::before {
+      background: $secsub;
+    }
+    &::after {
+      transform: translateY(100%);
+      background: $main;
+    }
+    span {
+      z-index: 1;
+      position: static;
+      transition: 100ms ease-out;
+			&::before,
+			&::after {
+        @include abs(
+          $d: block, $w: fit-content,
+          $h: 1em, $mg: auto, $c: $wt
+        );
+				content: attr(data-text);
+				inset: 0;
+        transition: 350ms ease-out;
+			}
+			&::after {
+				transform: translateY(300%);
+				transition-delay: 75ms;
+        z-index: 1;
+			}
+    }
+    &:hover {
+      &::before {
+        transform: translateY(-300%);
+      }
+      &::after {
+        transform: translateY(0);
+      }
+      span {
+        &::before {
+          transform: translateY(-300%);
+        }
+        &::after {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
 ol, ul {
   list-style: none;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 0;
+  border-bottom: 2px solid $main;
+  font-size: 18px;
+  color: $main;
+  &::placeholder {
+    color: $secsub;
+  }
+  &:focus {
+    outline: 0;
+  }
 }
 
 .img_wrapper {

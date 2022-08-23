@@ -1,0 +1,13 @@
+@import "./../../style/function.scss";
+
+.form {
+  @include fle(
+    $ai: center, $jc: center,
+    $mg: 10% auto
+  );
+  flex-direction: column;
+  max-width: 450px;
+  .main_btn {
+    margin-top: 20px;
+  }
+}

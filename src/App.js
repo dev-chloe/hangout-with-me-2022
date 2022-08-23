@@ -4,6 +4,7 @@ import Router from "Router";
 
 function App() {
   const [isReady, setIsReady] = useState(false);
+  const [isLogined, setIsLogined] = useState(false);
   useEffect(() => {
     setIsReady(true);
   }, [])
@@ -13,7 +14,7 @@ function App() {
         {isReady ?
           <>
             <Topbanner></Topbanner>
-            <Router />
+            <Router isLogined={isLogined} />
           </>
           :
           <div>"ready"</div>

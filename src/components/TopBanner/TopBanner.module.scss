@@ -1,10 +1,11 @@
 @import "./../../style/function.scss";
 
 .top_banner {
-  @include fle(
+  @include rel(
+    $d: flex,
     $ai: center, $jc: space-between,
     $bg: linear-gradient(171deg, $secsub, #DFDFF7),
-    $pd: 20px, $c: $wt
+    $pd: 16% 20px, $c: $wt, 
   );
   .txt_wrapper {
     @include fle (
@@ -14,6 +15,33 @@
     text-shadow: 4px 6px $secsub;
   }
   .img_wrapper {
-    max-width: 50%;
+    @include abs(
+      $r: 20px, $t: -20px
+    );
+    max-width: 40%;
+    animation: flying 3s linear infinite;
+  }
+}
+
+@keyframes flying {
+  0% {
+    right: 30px;
+    top: 30px;
+  }
+  25% {
+    right: 35px;
+    top: 25px;
+  }
+  50% {
+    right: 30px;
+    top: 30px;
+  }
+  75% {
+    right: 25px;
+    top: 25px;
+  }
+  100% {
+    right: 30px;
+    top: 30px;
   }
 }

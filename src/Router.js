@@ -2,14 +2,16 @@ import Header from "components/Header";
 import Sidebar from "components/Sidebar";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import Home from "routes/Home";
+import Login from "routes/Login";
 
-const Router = () => {
+const Router = ({isLogined}) => {
   return (
     <HashRouter>
-      <Header></Header>
+      <Header isLogined={isLogined}></Header>
       <Sidebar></Sidebar>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </HashRouter>
   )

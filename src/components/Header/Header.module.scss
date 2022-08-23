@@ -13,7 +13,7 @@
     );
     gap: 10px;
     li {
-      a {
+      a, button {
         @include fle (
           $jc: space-between,
           $c: $main, $fw: bold, $pd: 10px,
