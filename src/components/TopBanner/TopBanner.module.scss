@@ -16,8 +16,9 @@
   }
   .img_wrapper {
     @include abs(
-      $r: 20px, $t: -20px
+      $r: 20px, $t: 50%
     );
+    transform: translateY(-50%);
     max-width: 40%;
     animation: flying 3s linear infinite;
   }
@@ -26,14 +27,14 @@
 @keyframes flying {
   0%, 50%, 100% {
     right: 30px;
-    top: -10px;
+    top: 50%;
   }
   25% {
     right: 35px;
-    top: 0px;
+    top: 51%;
   }
   75% {
     right: 25px;
-    top: 0px;
+    top: 51%;
   }
 }

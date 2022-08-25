@@ -7,9 +7,44 @@
     $bg: $main, $c: $wt
   );
   max-width: 300px;
+  transition: all .4s;
+  &.toggled {
+    max-width: 100px;
+    .logo {
+      a {
+        svg {
+          margin-right: 0;
+        }
+        p {
+          display: none;
+        }
+      }
+    }
+    nav {
+      ul {
+        li {
+          a {
+            justify-content: center;
+            p {
+              display: none;
+            }
+            &::before {
+              display: none;
+            }
+            &:hover {
+              svg {
+                color: $main;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   .logo {
+    @include rel ();
     font-size: 25px;
-    font-weight: bold;
+    font-weight: 500;
     text-transform: capitalize;
     padding-bottom: 20px;
     border-bottom: 1px solid $secsub;
@@ -17,10 +52,20 @@
       @include fle(
         $c: $wt, $jc: center
       );
-      color: $wt;
+      letter-spacing: -1.5px;
       svg {
         margin-right: 20px;
       }
+    }
+    .close_btn {
+      @include abs (
+        $t: 32%, $r: -45px,
+        $borRa: 50%, $w: 50px, $h: 50px,
+        $bg: $secsub, $d: flex, $ai: center, $jc: center,
+        $fs: 23px
+      );
+      transform: translateY(-55%);
+      cursor: pointer;
     }
   }
   nav {
@@ -65,6 +110,38 @@
 @media screen and (max-width: 900px) {
   .sidebar {
     max-width: 100px;
+    &.toggled {
+      max-width: 300px;
+      .logo {
+        a {
+          svg {
+            margin-right: 20px;
+          }
+          p {
+            display: block;
+          }
+        }
+      }
+      nav {
+        ul {
+          li {
+            a {
+              p {
+                display: block;
+              }
+              &::before {
+                display: block;
+              }
+              &:hover {
+                svg {
+                  color: $wt;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
     .logo {
       a {
         svg {

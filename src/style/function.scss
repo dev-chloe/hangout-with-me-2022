@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 @mixin css($w: null, $maxW: null, $h: null, $maxH: null, $d: null, $ai: null, $jc: null, $fd: null, $mg: null, $mgT: null, $mgB: null, $mgL: null, $mgR: null, $pd: null, $pdT: null, $pdB: null, $pdL: null, $pdR: null, $bor: null, $borT: null, $borB: null, $borL: null, $borR: null, $borRa: null, $c: null, $fs: null, $fw: null, $ta: null, $bg: null, $p: null, $t: null, $b: null, $l: null, $r: null) {
   width: $w;
   max-width: $maxW;
@@ -61,3 +63,7 @@ $main: #6667ab;
 $secsub: #9496F7;
 $sub: #DFDFF7;
 $gray: #A6A7B9;
+
+.eng {
+  font-family: 'Ubuntu', sans-serif;
+}

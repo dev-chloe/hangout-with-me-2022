@@ -1,12 +1,12 @@
 
-import { faHome, faList, faSquareH } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faHome, faList, faSquareH } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import style from "./Sidebar.module.scss";
 
-const Sidebar = () => {
+const Sidebar = ({isNavShowed, toggledBar}) => {
   return (
-    <div className={style.sidebar}>
+    <div className={`${style.sidebar} ${isNavShowed ? style.toggled : ""}`}>
       <div className={style.logo}>
         <Link to="/">
           <FontAwesomeIcon icon={faSquareH} />
@@ -14,6 +14,9 @@ const Sidebar = () => {
             chloe's homepage
           </p>
         </Link>
+        <div className={style.close_btn} onClick={toggledBar && toggledBar}>
+          <FontAwesomeIcon icon={faBars} />
+        </div>
       </div>
       <nav>
         <ul>
