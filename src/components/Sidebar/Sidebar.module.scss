@@ -126,6 +126,7 @@
         ul {
           li {
             a {
+              justify-content: flex-start;
               p {
                 display: block;
               }
@@ -166,6 +167,77 @@
             &:hover {
               svg {
                 color: $main;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar {
+    max-width: 0px;
+    padding: 25px 0 20px;
+    &.toggled {
+      max-width: 80%;
+      padding: 25px 20px 20px;
+      .logo {
+        a {
+          display: flex;
+          svg {
+            margin-right: 20px;
+          }
+          p {
+            display: block;
+          }
+        }
+        .close_btn {
+          right: -45px;
+        }
+      }
+      nav {
+        ul {
+          li {
+            a {
+              display: flex;
+              justify-content: flex-start;
+              p, 
+              svg,
+              &::before  {
+                display: block;
+              }
+              &:hover {
+                svg {
+                  color: $wt;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .logo {
+      a {
+        display: none;
+      }
+      .close_btn {
+        right: -65px;
+      }
+    }
+    nav {
+      ul {
+        li {
+          a {
+            p, 
+            svg,
+            &::before {
+              display: none;
+            }
+            &:hover {
+              svg {
+                color: $wt;
               }
             }
           }
