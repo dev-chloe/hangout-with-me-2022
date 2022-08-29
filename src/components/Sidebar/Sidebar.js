@@ -11,7 +11,7 @@ const Sidebar = ({isNavShowed, toggledBar}) => {
         <Link to="/">
           <FontAwesomeIcon icon={faSquareH} />
           <p>
-            chloe's homepage
+            chloe&apos;s homepage
           </p>
         </Link>
         <div className={style.close_btn} onClick={toggledBar && toggledBar}>
@@ -39,7 +39,7 @@ const Sidebar = ({isNavShowed, toggledBar}) => {
         </ul>
       </nav>
     </div>
-  )
-}
+  );
+};
 
 export default Sidebar;

@@ -18,7 +18,7 @@ const ContentDetail = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default ContentDetail;

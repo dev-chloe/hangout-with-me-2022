@@ -6,6 +6,6 @@ const Home = () => {
       <ContentList></ContentList>
     </div>
   );
-}
+};
 
 export default Home;

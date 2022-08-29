@@ -8,10 +8,11 @@ function App() {
   const [isNavShowed, setIsNavShowed] = useState();
   const toggledBar = () => {
     setIsNavShowed((prev) => !prev);
-  }
+  };
   useEffect(() => {
+    setIsLogined();
     setIsReady(true);
-  }, [])
+  }, []);
   return (
     <div className="App eng">
       <div className={`container ${isNavShowed ? "toggled" : "" }`}>
@@ -21,7 +22,7 @@ function App() {
             <Router isLogined={isLogined} isNavShowed={isNavShowed} toggledBar={toggledBar} />
           </>
           :
-          <div>"ready"</div>
+          "Initializing..."
         }
       </div>
     </div>

@@ -6,6 +6,6 @@ const Content = () => {
       <ContentList />
     </div>
   );
-}
+};
 
 export default Content;

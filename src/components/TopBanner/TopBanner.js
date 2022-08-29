@@ -11,7 +11,7 @@ const TopBanner = () => {
         <img src={topImg} alt="flying people"/>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default TopBanner;

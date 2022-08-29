@@ -42,7 +42,7 @@ const Header = ({isLogined}) => {
         }
       </ul>
     </header>
-  )
-}
+  );
+};
 
 export default Header;

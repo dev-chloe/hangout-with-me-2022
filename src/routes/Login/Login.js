@@ -1,9 +1,9 @@
-import style from "./Login.module.scss"
+import style from "./Login.module.scss";
 
 const Login = () => {
   const onSubmit = () => {
     console.log(1);
-  }
+  };
   return (
     <div className="wrapper">
       <form onSubmit={onSubmit} className={style.form}>
@@ -12,7 +12,7 @@ const Login = () => {
         <button className={`main_btn ${style.main_btn}`}><span data-text="Login"></span></button>
       </form>
     </div>
-  )
-}
+  );
+};
 
 export default Login;

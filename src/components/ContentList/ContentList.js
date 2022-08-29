@@ -167,7 +167,7 @@ const ContentList = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default ContentList;

@@ -20,7 +20,7 @@ const Router = ({isLogined, isNavShowed, toggledBar}) => {
         <Route path="/contents:id" element={<ContentDetail />} />
       </Routes>
     </HashRouter>
-  )
-}
+  );
+};
 
 export default Router;
