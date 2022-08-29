@@ -2,9 +2,12 @@
 import { faBars, faHome, faList, faSquareH } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { navState } from "recoils";
 import style from "./Sidebar.module.scss";
 
-const Sidebar = ({isNavShowed, toggledBar}) => {
+const Sidebar = ({toggledBar}) => {
+  const isNavShowed = useRecoilValue(navState);
   return (
     <div className={`${style.sidebar} ${isNavShowed ? style.toggled : ""}`}>
       <div className={style.logo}>

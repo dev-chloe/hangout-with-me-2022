@@ -1,11 +1,13 @@
 import Topbanner from "components/TopBanner";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useRecoilState } from "recoil";
+import { loginState, navState, readyState }  from "recoils";
 import Router from "Router";
 
 function App() {
-  const [isReady, setIsReady] = useState(false);
-  const [isLogined, setIsLogined] = useState(false);
-  const [isNavShowed, setIsNavShowed] = useState();
+  const [isReady, setIsReady] = useRecoilState(readyState);
+  const [isLogined, setIsLogined] = useRecoilState(loginState);
+  const [isNavShowed, setIsNavShowed] = useRecoilState(navState);
   const toggledBar = () => {
     setIsNavShowed((prev) => !prev);
   };
@@ -19,7 +21,7 @@ function App() {
         {isReady ?
           <>
             <Topbanner></Topbanner>
-            <Router isLogined={isLogined} isNavShowed={isNavShowed} toggledBar={toggledBar} />
+            <Router isLogined={isLogined} toggledBar={toggledBar} />
           </>
           :
           "Initializing..."

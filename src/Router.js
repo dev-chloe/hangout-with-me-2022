@@ -7,10 +7,10 @@ import Home from "routes/Home";
 import Join from "routes/Join";
 import Login from "routes/Login";
 
-const Router = ({isLogined, isNavShowed, toggledBar}) => {
+const Router = ({ isNavShowed, toggledBar}) => {
   return (
     <HashRouter>
-      <Header isLogined={isLogined}></Header>
+      <Header></Header>
       <Sidebar isNavShowed={isNavShowed} toggledBar={toggledBar} ></Sidebar>
       <Routes>
         <Route path="/" element={<Home />} />

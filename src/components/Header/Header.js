@@ -1,9 +1,12 @@
 import { faFaceGrinBeam, faRightFromBracket, faRightToBracket, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { loginState } from "recoils";
 import style from "./Header.module.scss";
 
-const Header = ({isLogined}) => {
+const Header = () => {
+  const isLogined = useRecoilValue(loginState);
   return (
     <header className={style.header}>
       <ul>
