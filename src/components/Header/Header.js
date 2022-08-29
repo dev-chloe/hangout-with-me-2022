@@ -33,7 +33,7 @@ const Header = ({isLogined}) => {
               </Link>
             </li>
             <li>
-              <Link to="/">
+              <Link to="/join">
                 <FontAwesomeIcon icon={faUser} />
                 회원가입
               </Link>

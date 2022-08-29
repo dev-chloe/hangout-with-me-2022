@@ -31,7 +31,7 @@ const ContentList = () => {
         <div className={style.content_info}>
           <p className={style.date}>2022.08.20</p>
           <div className={style.goBtn}>
-            <Link to="/">
+            <Link to="/contents:id">
               more
               <FontAwesomeIcon icon={faAnglesRight} />
             </Link>

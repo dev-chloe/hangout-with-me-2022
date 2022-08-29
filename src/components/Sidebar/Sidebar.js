@@ -29,7 +29,7 @@ const Sidebar = ({isNavShowed, toggledBar}) => {
             </Link>
           </li>
           <li className={style.active}>
-            <Link to="/">
+            <Link to="/contents">
               <FontAwesomeIcon icon={faList} />
               <p>
                 contents
