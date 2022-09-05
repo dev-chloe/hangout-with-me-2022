@@ -1,19 +1,35 @@
 import Topbanner from "components/TopBanner";
 import { useEffect } from "react";
-import { useRecoilState } from "recoil";
-import { loginState, navState, readyState }  from "recoils";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { loginState, navState, readyState, userState }  from "recoils";
 import Router from "Router";
+import AuthService from "services/AuthService";
 
 function App() {
+  const setUserState = useSetRecoilState(userState);
+  const isNavShowed = useRecoilValue(navState);
   const [isReady, setIsReady] = useRecoilState(readyState);
-  const [isLogined, setIsLogined] = useRecoilState(loginState);
-  const [isNavShowed, setIsNavShowed] = useRecoilState(navState);
-  const toggledBar = () => {
-    setIsNavShowed((prev) => !prev);
-  };
+  const setisLogined = useSetRecoilState(loginState);
   useEffect(() => {
-    setIsLogined();
-    setIsReady(true);
+    AuthService.refresh((loggedInUser) => {
+      setIsReady(true);
+      if (loggedInUser) {
+        setUserState({
+          displayName: loggedInUser.displayName ?? loggedInUser.email.split("@")[0],
+          uid: loggedInUser.uid,
+          email: loggedInUser.email
+        });
+        AuthService.saveProfile({
+          displayName: loggedInUser.displayName ?? loggedInUser.email.split("@")[0],
+          uid: loggedInUser.uid,
+          email: loggedInUser.email
+        });
+        setisLogined(true);
+        return;
+      }
+      setisLogined(false);
+      setUserState(null);
+    });
   }, []);
   return (
     <div className="App eng">
@@ -21,7 +37,7 @@ function App() {
         {isReady ?
           <>
             <Topbanner></Topbanner>
-            <Router isLogined={isLogined} toggledBar={toggledBar} />
+            <Router/>
           </>
           :
           "Initializing..."

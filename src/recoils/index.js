@@ -14,3 +14,12 @@ export const navState = atom({
   key: "navState",
   default: false
 });
+
+export const userState = atom({
+  key: "userState",
+  default: {
+    displayName: "",
+    email: "",
+    uid: ""
+  }
+});

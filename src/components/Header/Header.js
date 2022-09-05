@@ -1,12 +1,19 @@
 import { faFaceGrinBeam, faRightFromBracket, faRightToBracket, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import { useRecoilValue } from "recoil";
-import { loginState } from "recoils";
+import { useRecoilValue, useResetRecoilState } from "recoil";
+import { loginState, userState } from "recoils";
+import AuthService from "services/AuthService";
 import style from "./Header.module.scss";
 
 const Header = () => {
   const isLogined = useRecoilValue(loginState);
+  const resetUser = useResetRecoilState(userState);
+  const userName = useRecoilValue(userState);
+  const logout = () => {
+    resetUser();
+    AuthService.logout();
+  };
   return (
     <header className={style.header}>
       <ul>
@@ -14,14 +21,14 @@ const Header = () => {
           <>
             <li>
               <Link to="/">
-                <div className="user_icon">
+                <div   className="user_icon">
                   <FontAwesomeIcon icon={faFaceGrinBeam} />
                 </div>
-                chloe
+                <p>{userName.displayName}</p>
               </Link>
             </li>
             <li>
-              <button>
+              <button onClick={logout}>
                 <FontAwesomeIcon icon={faRightFromBracket} />
                 로그아웃
               </button>
